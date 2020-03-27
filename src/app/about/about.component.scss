@@ -1,0 +1,41 @@
+ion-content ion-toolbar {
+    --background: translucent;
+  }
+  
+  .me {
+    width: 128px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+  .about {
+    text-align: center;
+    font-weight: 700;
+    font-style: italic;
+  }
+  .social {
+    display: flex;
+    justify-content: center;
+  }
+  .social img {
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+  }
+
+.copy {
+  color: #696969;
+  font-style: 12px;
+  padding: 10px;
+}
+
+.fullheight {
+  height: 100%;
+}
+
+.xc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

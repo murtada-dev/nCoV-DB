@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode="ios" color="primary">
+    <ion-title>
+      تقرير مفصل
+    </ion-title>
+    <ion-buttons mode="md" slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar mode="ios" color="primary">
+    <ion-segment [(ngModel)]="yourSelect">
+      <ion-segment-button value="cases">
+        <ion-label>الاصابات</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="deaths">
+        <ion-label>الوفايات</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-progress-bar *ngIf="isShowing" type="indeterminate"></ion-progress-bar>
+  <ion-grid>
+    <ion-row>
+      <ion-col style="text-align: center; border-bottom: 1px solid #d3d3d3;">التاريخ</ion-col>
+      <ion-col style="text-align: center; border-bottom: 1px solid #d3d3d3;">العدد</ion-col>
+    </ion-row>
+  </ion-grid>
+<div [ngSwitch]="yourSelect">
+  <ion-grid *ngSwitchCase="'cases'">
+    <ion-row  *ngFor="let case of cases | keyvalue: asIsOrder;let i = index">
+        <ion-col>
+          <ion-item lines="none">
+            <ion-label style="text-align: center; color:#555555;">{{case.key | date: "yyy/MM/dd"}}</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-label style="text-align: center; color:#555555;">{{case.value}}</ion-label>
+          </ion-item>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngSwitchCase="'deaths'">
+    <ion-row *ngFor="let death of deaths | keyvalue: asIsOrder;let i = index">
+        <ion-col>
+          <ion-item lines="none">
+            <ion-label style="text-align: center; color:#555555;">{{death.key | date:"yyy/MM/dd"}}</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-label style="text-align: center; color:#555555;">{{death.value}}</ion-label>
+          </ion-item>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode="ios" color="primary">
+    <ion-title>
+      عالمياً
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <div class="ion-padding-horizontal">
+      <ion-searchbar mode="ios" placeholder="بحث" (ionChange)="getItems($event)" animated> 
+      </ion-searchbar>
+      </div>
+  </ion-toolbar >
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-progress-bar mode="ios" *ngIf="isShowing" type="indeterminate"></ion-progress-bar>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 2</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item *ngFor="let item of items" button [routerLink]="['/view', item.country]">
+    <ion-avatar slot="start">
+      <span class="flag-icon flag-icon-{{item['countryInfo'].iso2 | lowercase}} flag-icon-background"></span>
+    </ion-avatar>
+    <ion-label>
+      {{item.country}}
+    </ion-label>
+  </ion-item>
+
+</ion-content>

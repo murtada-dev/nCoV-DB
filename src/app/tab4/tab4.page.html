@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode="ios" color="primary">
+    <ion-title>
+      أعدادات
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-label>أشعارات</ion-label>
+      <ion-toggle checked></ion-toggle>
+    </ion-item>
+    <ion-item button [routerLink]="['/sources']">
+      <ion-label>المصادر</ion-label>
+    </ion-item>
+
+    <ion-item button [routerLink]="['/about']">
+      <ion-label>حول</ion-label>
+    </ion-item>
+
+  </ion-list>
+</ion-content>
