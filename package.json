@@ -80,7 +80,7 @@
       "onesignal-cordova-plugin": {},
       "cordova-plugin-ionic": {
         "APP_ID": "0a6eb28f",
-        "CHANNEL_NAME": "Master",
+        "CHANNEL_NAME": "Production",
         "UPDATE_METHOD": "background",
         "MAX_STORE": "2",
         "MIN_BACKGROUND_DURATION": "30",
