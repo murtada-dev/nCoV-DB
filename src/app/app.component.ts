@@ -25,7 +25,7 @@ export class AppComponent {
       this.statusBar.backgroundColorByHexString('#eb445a');
       this.splashScreen.hide();
 
-      this.oneSignal.startInit('d0bf8c97-617e-41bd-a30c-7b76f1ce03c1', '427443388789');
+      this.oneSignal.startInit('7ac9b170-a2bb-4de2-9e54-bade7126a4e6', '475928564145');
 
       this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
       
