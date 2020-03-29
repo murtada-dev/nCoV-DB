@@ -13,20 +13,17 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-progress-bar mode="ios" *ngIf="isShowing" type="indeterminate"></ion-progress-bar>
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-item *ngFor="let item of items" button [routerLink]="['/view', item.country]">
+  <ion-progress-bar *ngIf="isShowing" type="indeterminate"></ion-progress-bar>
+  <ion-item *ngFor="let i of items" button [routerLink]="['/view', i.country]">
     <ion-avatar slot="start">
-      <span class="flag-icon flag-icon-{{item['countryInfo'].iso2 | lowercase}} flag-icon-background"></span>
+      <span class="flag-icon flag-icon-{{i['countryInfo'].iso2 | lowercase}} flag-icon-background"></span>
     </ion-avatar>
     <ion-label>
-      {{item.country}}
+      {{i.country}}
     </ion-label>
   </ion-item>
 
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
